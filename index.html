@@ -138,33 +138,49 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">PartGAN: Unsupervised Part Decomposition for Image Generation and Segmentation</span>
-		<table align=center width=800px>
-			<table align=center width=800px>
+		<span style="font-size:36px">Collaging Class-specific GANs for Semantic Image Synthesis</span>
+
+		<br>
+
+		<table align=center width=980px>
+			<table align=center width=980px>
 				<tr>
 					<td align=center width=200px>
 						<center>
 							<span style="font-size:20px"><a href="https://github.com/Yuheng-Li">Yuheng Li</a></span>
 						</center>
 					</td>
+					<td align=center width=150px>
+						<center>
+							<span style="font-size:20px"><a href="https://yijunmaverick.github.io/">Yijun Li</a></span>
+						</center>
+					</td>
 					<td align=center width=200px>
+						<center>
+							<span style="font-size:20px"><a href="https://research.adobe.com/person/jingwan-lu/">Jingwan Lu</a></span>
+						</center>
+					</td>
+					<td align=center width=200px>
+						<center>
+							<span style="font-size:20px"><a href="https://research.adobe.com/person/eli-shechtman/">Eli Shechtman</a></span>
+						</center>
+					</td>
+					<td align=center width=200px>
+						<center>
+							<span style="font-size:20px"><a href="https://pages.cs.wisc.edu/~yongjaelee/">Yong Jae Lee</a></span>
+						</center>
+					</td>
+					<td align=center width=250px>
 						<center>
 							<span style="font-size:20px"><a href="http://krsingh.cs.ucdavis.edu/">Krishna Kumar Singh</a></span>
 						</center>
 					</td>
-					<td align=center width=200px>
-						<center>
-							<span style="font-size:20px"><a href="https://www.linkedin.com/in/yang-xue">Xue Yang</a></span>
-						</center>
-					</td>
-					<td align=center width=200px>
-						<center>
-							<span style="font-size:20px"><a href="https://web.cs.ucdavis.edu/~yjlee/">Yong Jae Lee</a></span>
-						</center>
-					</td>
 				</tr>
 			</table>
-			<table align=center width=250px>
+
+
+
+			<!-- <table align=center width=250px>
 				<tr>
 					<td align=center width=120px>
 						<center>
@@ -173,20 +189,24 @@
 					</td>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href='https://github.com/Yuheng-Li/partgan'>[GitHub]</a></span><br>
+							<span style="font-size:24px"><a href='https://github.com/Yuheng-Li/CollageGAN'>[GitHub]</a></span><br>
 						</center>
 					</td>
 				</tr>
-			</table>
+			</table> -->
+
+
+
 		</table>
 	</center>
 
+	<br>
 	<center>
 		<table align=center width=850px>
 			<tr>
 				<td width=260px>
 					<center>
-						<img class="round" style="width:500px" src="./resources/teaser.png"/>
+						<img class="round" style="width:500px" src="./resources/teaser.jpg"/>
 					</center>
 				</td>
 			</tr>
@@ -200,7 +220,7 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				We propose PartGAN, a novel generative model that disentangles and generates background, object shape, object texture, and decomposes objects into parts without any mask or part annotations. To achieve object-level disentanglement, we build upon prior work and maximize the mutual information between the generated factors and sampled latent prior codes. To achieve part-level decomposition, we learn a part generator, which decomposes an object into parts that are spatially localized and disjoint, and consistent across instances. Extensive experiments on multiple datasets demonstrate that PartGAN discovers consistent object parts, which enable part-based controllable image generation.
+				We propose a new approach for high resolution semantic image synthesis. It consists of one base image generator and multiple class-specific generators. The base generator generates high quality images based on a segmentation map. To further improve the quality of different objects, we create a bank of Generative Adversarial Networks (GANs) by separately training class-specific models. This has several benefits including -- dedicated weights for each class; centrally aligned data for each model; additional training data from other sources, potential of higher resolution and quality; and easy manipulation of a specific object in the scene. Experiments show that our approach can generate high quality images in high resolution while having flexibility of object-level control by using class-specific generators.
 			</td>
 		</tr>
 	</table>
@@ -224,9 +244,10 @@
 	</table>
 	<hr> -->
 
-	<!-- <center><h1>Approach</h1></center>
 
-	<table align=center width=820px>
+	<center><h1>Approach</h1></center>
+
+	<table align=center width=800px>
 		<center>
 			<tr>
 				<td>
@@ -242,7 +263,7 @@
 				</center>
 			</td>
 		</tr>
-	</table> -->
+	</table>
 
 	<!-- <table align=center width=850px>
 		<center>
@@ -253,6 +274,8 @@
 			</tr>
 		</center>
 	</table> -->
+
+	<hr>
 
 	<!-- <table align=center width=800px>
 		<br>
@@ -266,47 +289,47 @@
 
 	<center><h1>Results</h1></center>
 
-	<br>
 	
 
-	<center><h2>Mask visualization</h2></center>
+	<center><h2>Compare our base model with baselines</h2></center>
 
-        <table align=center width=950px>
+        <table align=center width=900px>
                 <tr>
                         <td align=center width=900px>
                                 <center>
-                                        <td><img class="round" style="width:900px" src="./resources/mask_visualization.png"/></td>
+                                        <td><img class="round" style="width:900px" src="./resources/baseline.jpg"/></td>
                                 </center>
                         </td>
                 </tr>
         </table>
-		<table align=center width=850px>
+		<table align=center width=900px>
 			<center>
 				<tr>
 					<td>
-						PartGAN can discover consistent parts, which are sometimes semantically meaningful, on diverse datasets without part supervision. For example, it can separate a person into head, limbs, upper, and lower clothing parts on the DeepFashion dataset.
+						Visual comparison of segmentation map to image synthesis results on the ADE20K bedroom (512x512), full human body (512x512), and Cityscapes (1024x512) datasets.
 					</td>
 				</tr>
 			</center>
 		</table>
 
 	<br>
-	<center><h2>Unconditional generation</h2></center>
 
-		<table align=center width=950px>
+	<center><h2>Collaging class-specific GANs</h2></center>
+
+		<table align=center width=900px>
 				<tr>
 						<td align=center width=900px>
 								<center>
-										<td><img class="round" style="width:900px" src="./resources/unconditional_part.png"/></td>
+										<td><img class="round" style="width:900px" src="./resources/collaging.jpg"/></td>
 								</center>
 						</td>
 				</tr>
 		</table>
-		<table align=center width=800px>
+		<table align=center width=900px>
 			<center>
 				<tr>
 					<td>
-						The images in each column share the same background, shape, and texture codes except for one part. We randomly sample three different texture codes for the remaining part to change the texture of the head (a), chest (b), and wing (c).
+						Our CollageGAN model takes advantage of class-specific generators to provide more details to specific classes in the image generated by the base model.
 					</td>
 				</tr>
 			</center>
