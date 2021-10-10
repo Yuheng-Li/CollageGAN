@@ -204,9 +204,9 @@
 	<center>
 		<table align=center width=850px>
 			<tr>
-				<td width=260px>
+				<td width=400px>
 					<center>
-						<img class="round" style="width:500px" src="./resources/teaser.jpg"/>
+						<img class="round" style="width:800px" src="./resources/teaser.jpg"/>
 					</center>
 				</td>
 			</tr>
@@ -314,6 +314,32 @@
 
 	<br>
 
+
+
+	<br>
+	<center><h2>Multimodal results from the base model</h2></center>
+
+		<table align=center width=950px>
+				<tr>
+						<td align=center width=900px>
+								<center>
+										<td><img class="round" style="width:900px" src="./resources/multi.jpg"/></td>
+								</center>
+						</td>
+				</tr>
+		</table>
+		<table align=center width=800px>
+			<center>
+				<tr>
+					<td>
+						Multi-modal synthesis results on bedroom, human and cityscapes by our base model. Each row shows multiple generations for same semantic mask.
+					</td>
+				</tr>
+			</center>
+		</table>
+
+
+	<br>
 	<center><h2>Collaging class-specific GANs</h2></center>
 
 		<table align=center width=900px>
@@ -336,72 +362,31 @@
 		</table>
 
 
-	<!-- <br>
-	<center><h2>Conditional generation</h2></center>
 
-		<table align=center width=950px>
+		<br>
+		<center><h2>Replacing objects in real images</h2></center>
+		<table align=center width=900px>
 				<tr>
 						<td align=center width=900px>
 								<center>
-										<td><img class="round" style="width:900px" src="./resources/conditional_part.png"/></td>
+										<td><img class="round" style="width:900px" src="./resources/replace_real.jpg"/></td>
 								</center>
 						</td>
 				</tr>
 		</table>
-		<table align=center width=800px>
+		<table align=center width=900px>
 			<center>
 				<tr>
 					<td>
-						For each sub-figure, the three real images on the left provide texture information for a specific part (chest (a), head (b), wing (c)), while the top three real images provide background, shape, and texture information for the rest of the parts.
-					</td>
+						Images in the red box are real images. Here we use the  <b>bed</b> and <b>uppercloth</b> specific generator to replace the original objects.
 				</tr>
 			</center>
-		</table> -->
-
-
-	<!-- <br>
-	<center><h2>Multi-part transfer</h2></center>
-
-		<table align=center width=950px>
-				<tr>
-						<td align=center width=900px>
-								<center>
-										<td><img class="round" style="width:900px" src="./resources/multi_parts.png"/></td>
-								</center>
-						</td>
-				</tr>
 		</table>
-		<table align=center width=800px>
-			<center>
-				<tr>
-					<td>
-						PartGAN can transfer part texture from multiple reference images; e.g., (top right) car hood and body are made yellow and blue, and windows are darkened.
-					</td>
-				</tr>
-			</center>
-		</table> -->
 
-	<!-- <br>
-	<center><h2>Sketch to image</h2></center>
 
-		<table align=center width=550px>
-				<tr>
-						<td align=center width=500px>
-								<center>
-										<td><img class="round" style="width:500px" src="./resources/sketch.png"/></td>
-								</center>
-						</td>
-				</tr>
-		</table>
-		<table align=center width=800px>
-			<center>
-				<tr>
-					<td>
-						In the first column, four sketch images provide shape information, the middle four real images provide texture information for each part, and the last column are the final generated images.
-					</td>
-				</tr>
-			</center>
-		</table> -->
+
+
+
 	
 
 	<br>
